@@ -5,7 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/MainMenu.unity
+    guid: 10e001ead449ab74799f6e1e38ca920d
+  - enabled: 1
+    path: Assets/Scenes/Breakfast.unity
+    guid: d56dca4cd401d43449eb8d094cd5a767
+  - enabled: 1
+    path: Assets/Scenes/BrushTeeth.unity
+    guid: 9161e702af776994d8b515f3e5613d4e
+  - enabled: 1
+    path: Assets/Scenes/GetDressed.unity
+    guid: a562781189e8de24289f8c344de0f945
+  - enabled: 1
+    path: Assets/Scenes/Shower.unity
+    guid: 4b040a283144085489ea10a00c0773a3
+  - enabled: 1
+    path: Assets/Scenes/WakeUp.unity
+    guid: 208c4943834cfde449d01165d19ca03d
   m_configObjects: {}
