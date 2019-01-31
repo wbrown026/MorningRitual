@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BrushMovement : MonoBehaviour
@@ -29,6 +30,10 @@ public class BrushMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
         Brush();
         ToothpasteBar();
     }
@@ -68,7 +73,7 @@ public class BrushMovement : MonoBehaviour
         if (toothpasteTime <= 0)
         {
             StaticManager.numberOfBrushes = count;
-            GetComponent<BrushMovement>().enabled = false;
+            //GetComponent<BrushMovement>().enabled = false;
             //Next scene
         }
     }
