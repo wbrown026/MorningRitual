@@ -9,6 +9,7 @@ public class Shake : MonoBehaviour
     public float magnitude;
 
     private float count;
+    private bool shake = false;
 
     void Start()
     {
@@ -20,7 +21,10 @@ public class Shake : MonoBehaviour
         if (count <= 0.0f)
         {
             count = shakeDelay;
-            StartCoroutine(ShakeObject(duration, magnitude));
+            if (shake)
+            {
+                StartCoroutine(ShakeObject(duration, magnitude));
+            }
         }
 
         count -= Time.deltaTime;
@@ -45,5 +49,10 @@ public class Shake : MonoBehaviour
         }
 
         transform.localPosition = originalPos;
+    }
+
+    public void SetShake(bool value)
+    {
+        shake = value;
     }
 }
