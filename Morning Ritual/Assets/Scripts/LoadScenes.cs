@@ -15,7 +15,15 @@ public class LoadScenes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Return))
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            StaticManager.easyWin = true;
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            StaticManager.chaosMeter = 20;
+        }
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             SceneManager.LoadScene(sceneName);
         }

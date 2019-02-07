@@ -41,4 +41,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MilkLose.unity
     guid: ebe722bd671d5714ab8779ed4586f162
+  - enabled: 1
+    path: Assets/Scenes/BadGetDressed.unity
+    guid: 3348863fb0fc7e944987efb41e4eb1f5
+  - enabled: 1
+    path: Assets/Scenes/BadShower.unity
+    guid: 135170d6dcd5fcd42a85286f2101500e
+  - enabled: 1
+    path: Assets/Scenes/BadWakeUp.unity
+    guid: 0ab9a9ee7137a524c8a4adb197501116
   m_configObjects: {}

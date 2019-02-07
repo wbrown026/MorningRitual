@@ -23,4 +23,7 @@ public static class StaticManager
 
     // Get Dressed
     public static Color shirtColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
+
+    //WinState
+    public static bool easyWin = false;
 }

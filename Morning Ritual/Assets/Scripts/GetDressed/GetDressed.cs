@@ -67,9 +67,15 @@ public class GetDressed : MonoBehaviour
     IEnumerator Wait(float length)
     {
         yield return new WaitForSeconds(length);
-        if(StaticManager.day == 6)
+        Debug.Log(StaticManager.day);
+        if (StaticManager.day == 6)
         {
             SceneManager.LoadScene("YouWin");
+        }
+        else if (StaticManager.easyWin)
+        {
+            StaticManager.day = 5;
+            StaticManager.easyWin = false;
         }
         // Next Scene
         if (StaticManager.chaosMeter <= 25)

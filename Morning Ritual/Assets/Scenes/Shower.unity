@@ -10332,6 +10332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1251587309}
   - component: {fileID: 1251587310}
+  - component: {fileID: 1251587311}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -10373,6 +10374,18 @@ MonoBehaviour:
   maxValue: 1000
   thermometer: {fileID: 1044319614}
   waterLevel: {fileID: 1347322234}
+--- !u!114 &1251587311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251587308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbe90b0885c73146aca016523cc8bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1310078041
 GameObject:
   m_ObjectHideFlags: 0

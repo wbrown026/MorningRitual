@@ -121,15 +121,6 @@ public class Shower : MonoBehaviour
         }
         else
         {
-            if (StaticManager.day == 0)
-            {
-                StaticManager.temperature = -totalAngle;
-            }
-            else
-            {
-                StaticManager.chaosMeter = Mathf.Abs(StaticManager.temperature - (-totalAngle)) / 100;
-            }
-
             StartCoroutine(Wait(2.0f));
         }
 
@@ -140,6 +131,14 @@ public class Shower : MonoBehaviour
     {
         yield return new WaitForSeconds(length);
 
+        if (StaticManager.day == 0)
+        {
+            StaticManager.temperature = -totalAngle;
+        }
+        else
+        {
+            //StaticManager.chaosMeter = Mathf.Abs(StaticManager.temperature - (-totalAngle)) / 100;
+        }
         // Next Scene
         if (StaticManager.chaosMeter <= 25)
         {
