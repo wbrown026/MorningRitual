@@ -102,13 +102,11 @@ public class FillBowl : MonoBehaviour
         if (timeLimit <= 0 && StaticManager.chaosMeter <= 25)
         {
             ChaosMeterChanging();
-            StaticManager.day += 1;
             SceneManager.LoadScene("BadBrushTeeth");
         }
         else if (timeLimit <= 0 && StaticManager.day == 0)
         {
             StaticManager.milkLevel = bowlTime;
-            StaticManager.day += 1;
             //GetComponent<BrushMovement>().enabled = false;
             //Next scene
 
@@ -118,7 +116,6 @@ public class FillBowl : MonoBehaviour
         {
             //Next Scene
             ChaosMeterChanging();
-            StaticManager.day += 1;
             SceneManager.LoadScene("BrushTeeth");
         }
     }

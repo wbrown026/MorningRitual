@@ -141,6 +141,13 @@ public class Shower : MonoBehaviour
         yield return new WaitForSeconds(length);
 
         // Next Scene
-
+        if (StaticManager.chaosMeter <= 25)
+        {
+            SceneManager.LoadScene("BadGetDressed");
+        }
+        else
+        {
+            SceneManager.LoadScene("GetDressed");
+        }
     }
 }

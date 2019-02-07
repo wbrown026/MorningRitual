@@ -104,6 +104,13 @@ public class WakeUp : MonoBehaviour
         yield return new WaitForSeconds(length);
 
         // Next Scene
-
+        if (StaticManager.chaosMeter <= 25)
+        {
+            SceneManager.LoadScene("BadBreakfast");
+        }
+        else
+        {
+            SceneManager.LoadScene("Breakfast");
+        }
     }
 }

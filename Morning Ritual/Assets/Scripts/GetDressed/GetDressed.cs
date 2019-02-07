@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GetDressed : MonoBehaviour
 {
@@ -66,8 +67,20 @@ public class GetDressed : MonoBehaviour
     IEnumerator Wait(float length)
     {
         yield return new WaitForSeconds(length);
-
+        if(StaticManager.day == 6)
+        {
+            SceneManager.LoadScene("YouWin");
+        }
         // Next Scene
-        
+        if (StaticManager.chaosMeter <= 25)
+        {
+            StaticManager.day += 1;
+            SceneManager.LoadScene("BadWakeUp");
+        }
+        else
+        {
+            StaticManager.day += 1;
+            SceneManager.LoadScene("WakeUp");
+        }
     }
 }
