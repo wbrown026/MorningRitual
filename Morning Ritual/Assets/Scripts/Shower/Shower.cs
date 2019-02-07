@@ -13,10 +13,12 @@ public class Shower : MonoBehaviour
     public float turnRate = 1f;
     public float maxValue = 1000f;
     public Slider thermometer;
+    public Slider waterLevel;
 
     private float oldAngle;
     private float totalAngle = 0.0f;
     private bool settingTemp = true;
+    private float waterTime;
 
     void Start()
     {
@@ -25,6 +27,19 @@ public class Shower : MonoBehaviour
         waterEmission.enabled = false;
         var steamEmission = steam.emission;
         steamEmission.enabled = false;
+        if (StaticManager.day == 0)
+        {
+            waterTime = 1.0f;
+        }
+        else
+        {
+            waterTime = 5.0f * (StaticManager.day + 1);
+        }
+
+        if (StaticManager.day > 3)
+        {
+            thermometer.gameObject.SetActive(false);
+        }
     }
 
     void Update()
@@ -94,16 +109,38 @@ public class Shower : MonoBehaviour
             // Thermometer
             thermometer.value = negAngle.Remap(0.0f, maxValue, 0, 100);
 
+            // Water Level
+            waterLevel.value -= Time.deltaTime * waterTime;
+
             // Set Temp
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || waterLevel.value <= 0)
             {
                 settingTemp = false;
             }
+
         }
         else
         {
-            StaticManager.temperature = -totalAngle;
+            if (StaticManager.day == 0)
+            {
+                StaticManager.temperature = -totalAngle;
+            }
+            else
+            {
+                StaticManager.chaosMeter = Mathf.Abs(StaticManager.temperature - (-totalAngle)) / 100;
+            }
+
+            StartCoroutine(Wait(2.0f));
         }
+
+        
+    }
+
+    IEnumerator Wait(float length)
+    {
+        yield return new WaitForSeconds(length);
+
+        // Next Scene
 
     }
 }
