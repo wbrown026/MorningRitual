@@ -23,8 +23,7 @@ public class MilkOrCereal : MonoBehaviour
     }
     public void MilkChoice()
     {
-        GameObject.Find("MilkOrCereal").SetActive(false);
-        MilkStuff.SetActive(true);
+        SceneManager.LoadScene("MilkLose");
 
     }
 

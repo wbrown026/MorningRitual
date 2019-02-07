@@ -26,4 +26,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WakeUp.unity
     guid: 208c4943834cfde449d01165d19ca03d
+  - enabled: 1
+    path: Assets/Scenes/BadBrushTeeth.unity
+    guid: 2f190484d032ffa4a9490692a940c964
+  - enabled: 1
+    path: Assets/Scenes/BadBreakfast.unity
+    guid: 943374afd8cd75848963af3f57e097b8
+  - enabled: 1
+    path: Assets/Scenes/YouLose.unity
+    guid: 8964863d260184c41beeb35fdbffed09
+  - enabled: 1
+    path: Assets/Scenes/YouWin.unity
+    guid: 893079bed04f8d148a09c15201595277
+  - enabled: 1
+    path: Assets/Scenes/MilkLose.unity
+    guid: ebe722bd671d5714ab8779ed4586f162
   m_configObjects: {}
