@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadScenes : MonoBehaviour
 {
+    public string sceneName;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,10 @@ public class LoadScenes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Return))
+        {
+            SceneManager.LoadScene(sceneName);
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
