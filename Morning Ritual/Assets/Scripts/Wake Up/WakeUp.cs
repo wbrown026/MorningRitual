@@ -26,6 +26,10 @@ public class WakeUp : MonoBehaviour
         {
             step = 1.0f;
         }
+        else
+        {
+            step = 7f * (StaticManager.day + 1);
+        }
 
         startSunMoonPos = sun.transform.position;
     }
@@ -80,10 +84,26 @@ public class WakeUp : MonoBehaviour
         }
         else
         {
-            StaticManager.time = time;
+            if (StaticManager.day == 0)
+            {
+                StaticManager.time = time;
+            }
+            else
+            {
+                StaticManager.chaosMeter -= Mathf.Abs(StaticManager.time - time) / 100;
+            }
+
             Destroy(warning);
 
-            // Next scene
+            StartCoroutine(Wait(2.0f));
         }
+    }
+
+    IEnumerator Wait(float length)
+    {
+        yield return new WaitForSeconds(length);
+
+        // Next Scene
+
     }
 }
